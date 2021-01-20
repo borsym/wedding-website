@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled, { css } from "styled-components/macro";
-import { Button } from "../components/Button";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import { IoArrowForward, IoArrowBack } from "react-icons/io5";
 
@@ -114,6 +113,29 @@ const arrowButtons = css`
   }
 `;
 
+const SocialIconLink = styled.a`
+  background: ${({ primary }) => (primary ? "#000d1a" : "CD853F")};
+  white-space: nowrap;
+  outline: none;
+  border: none;
+  min-width: 100px;
+  max-width: 200px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: ${({ big }) => (big ? "16px 40px" : "14px 24px")};
+  color: ${({ primary }) => (primary ? "#fff" : "#000d1a")};
+  font-size: ${({ big }) => (big ? "20px" : "14px")};
+  border-radius: ${({ round }) => (round ? "50px" : "0px")};
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+`;
+
 const PrevArrow = styled(IoArrowBack)`
   ${arrowButtons}
 `;
@@ -127,17 +149,17 @@ const Hero = ({ slides }) => {
   const length = slides.length;
   const timeout = useRef(null);
 
-  /* useEffect(() => {
+  useEffect(() => {
     const nextSlide = () => {
       setCurrent((current) => (current === length - 1 ? 0 : current + 1));
     };
-    timeout.current = setTimeout(nextSlide, 5000);
+    timeout.current = setTimeout(nextSlide, 35000); // ezt ird at a gyorsitashoz
     return function () {
       if (timeout.current) {
         clearTimeout(timeout.current);
       }
     };
-  }, [current, length]); */
+  }, [current, length]);
   const nextSlide = () => {
     if (timeout.current) {
       clearTimeout(timeout.current);
@@ -166,19 +188,15 @@ const Hero = ({ slides }) => {
                   <HeroContent>
                     <h1>{slide.title}</h1>
                     <p>{slide.name}</p>
-                    <Button
-                      to={slide.path}
+                    <SocialIconLink
+                      href={slide.path}
+                      target="_blank"
+                      aria-label="Youtube"
                       primary="true"
-                      css={`
-                        max-width: 160px;
-                        font-size: 14px;
-                        padding: "16px 40px";
-                        min-width: 180px;
-                      `}
                     >
                       {slide.label}
                       <Arrow />
-                    </Button>
+                    </SocialIconLink>
                   </HeroContent>
                 </HeroSlider>
               )}

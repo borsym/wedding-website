@@ -13,7 +13,7 @@ const PricingSection = styled.div`
   display: flex;
   flex-directino: column;
   justify-content: center;
-  background: #fafafa;
+  background: linear-gradient(45deg, #ffa07a 40%, #dc143c 100%);
 `;
 const PricingWrapper = styled.div`
   display: flex;
@@ -28,17 +28,17 @@ const PricingWrapper = styled.div`
   }
 `;
 const PricingHeading = styled.h1`
-  color: #1c2237;
+  color: #f8f8ff;
   margin-bottom: 24px;
 `;
 const PricingContainerFeatures = styled.ul`
-  margin: 16px 0 32px;
+  margin: 16px 0 28px;
   list-style: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   li {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 `;
 const PricingContainer = styled.div`
@@ -62,15 +62,15 @@ const PricingContainerCardInfo = styled.div`
   color: #fff;
 
   h3 {
-    margin-bottom: 5px;
-    font-size: 40px;
+    margin-bottom: 3px;
+    font-size: 36px;
   }
   h4 {
-    font-size: 24px;
+    font-size: 22px;
   }
   p {
     font-size: 14px;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
   }
 `;
 const Icon = styled.div`
@@ -91,16 +91,18 @@ const Pricing = () => {
                 <Icon>
                   <FaFire />
                 </Icon>
-                <h3>Starter</h3>
-                <h4>$9.00</h4>
-                <p>Per month</p>
+                <h3>Standard</h3>
+                <h4>something</h4>
+                <p>One camerman</p>
                 <PricingContainerFeatures>
-                  <li>1000 trans</li>
-                  <li>v$10000</li>
-                  <li>v$10000</li>
+                  <li>Two camera</li>
+                  <li>Wedding highlights</li>
+                  <li>64GB pendrive</li>
+                  <li>Gift Box</li>
+                  <li>Full HD</li>
                 </PricingContainerFeatures>
-                <Button buttonSize="btn--wide" primary="true">
-                  Choose Plan
+                <Button big="true" primary="true">
+                  Choose Package
                 </Button>
               </PricingContainerCardInfo>
             </Link>
@@ -112,14 +114,15 @@ const Pricing = () => {
                 </Icon>
                 <h3>Diamond</h3>
                 <h4>$29.00</h4>
-                <p>Per month</p>
+                <p>Two camerman</p>
                 <PricingContainerFeatures>
-                  <li>100000 trans</li>
-                  <li>$10000</li>
-                  <li>20% cash</li>
+                  <li>Includes standard</li>
+                  <li>Aerial shots</li>
+                  <li>Fast delivery</li>
+                  <li>Pre-photography</li>
                 </PricingContainerFeatures>
-                <Button buttonSize="btn--wide" primary="true">
-                  Choose Plan
+                <Button big="true" primary="true">
+                  Choose Package
                 </Button>
               </PricingContainerCardInfo>
             </Link>
@@ -131,13 +134,15 @@ const Pricing = () => {
                 </Icon>
                 <h3>Gold</h3>
                 <h4>$900.00</h4>
-                <p>Per month</p>
+                <p>One camerman</p>
                 <PricingContainerFeatures>
-                  <li>Toomach trans</li>
-                  <li>$10000</li>
-                  <li>200% cash</li>
+                  <li>Includes standard</li>
+                  <li>Aerial shots</li>
+                  <li>Fast delivery</li>
+                  <li>Pre-photography</li>
+                  <li>Pre-photography</li>
                 </PricingContainerFeatures>
-                <Button /* big="false" */ primary="true">Choose Plan</Button>
+                <Button /* big="false" */ primary="true">Choose Package</Button>
               </PricingContainerCardInfo>
             </Link>
           </PricingContainer>

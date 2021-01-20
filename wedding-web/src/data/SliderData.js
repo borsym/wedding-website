@@ -6,7 +6,7 @@ export const SliderData = [
   {
     title: "Nagykallo",
     name: "Adam & Eva",
-    path: "/contact",
+    path: "https://www.youtube.com/watch?v=KWyXHELYo_A&t=1s",
     label: "View Wedding",
     image: ImageOne,
     alt: "Wedding",
@@ -14,7 +14,7 @@ export const SliderData = [
   {
     title: "Napkor",
     name: "Kiss & Nagy",
-    path: "/contact",
+    path: "https://www.youtube.com/watch?v=mIq6kFF8KTk",
     label: "View Wedding",
     image: ImageTwo,
     alt: "Wedding",
@@ -22,7 +22,7 @@ export const SliderData = [
   {
     title: "Ujfeherto",
     name: "Bela & Eszter",
-    path: "/contact",
+    path: "https://www.youtube.com/watch?v=sSTzXhDrCSQ",
     label: "View Wedding",
     image: ImageThree,
     alt: "Wedding",

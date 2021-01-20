@@ -99,7 +99,7 @@ const Navbar = ({ toggle }) => {
             <NavMenuLinks
               to={item.link}
               key={index}
-              smooth={true}
+              smooth="true"
               duration={50000} // mintha a smooth alatt semmi mást nem használna
               /*  spy={true} */
               exact="true"
@@ -112,7 +112,7 @@ const Navbar = ({ toggle }) => {
         <NavBtn>
           <NavMenuLinks
             to="#contact"
-            smooth={true}
+            smooth="true"
             duration={500}
             /* spy={true} */
             exact="true"

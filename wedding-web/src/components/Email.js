@@ -8,11 +8,22 @@ const Email = () => {
       <EmailContent>
         <h1>Contat us</h1>
         <p>Write an email for us</p>
-        <from action="#">
+        <form action="#">
           <FormWrap>
+            <input type="text" placeholder="Enter your name" id="name" />
+            {/*    <input type="date" id="date" value="2017-06-01" /> */}
+            <input type="text" placeholder="Date like: 2020.01.01" id="date" />
             <label htmlFor="email">
               <input type="eamil" placeholder="Enter your email" id="email" />
             </label>
+            <select id="package">
+              <option defaultValue="" disabled selected>
+                Choose your package
+              </option>
+              <option defaultValue="react">Diamond</option>
+              <option defaultValue="react">Gold</option>
+              <option defaultValue="react">Standard</option>
+            </select>
             <Button
               as="button"
               type="submit"
@@ -42,7 +53,7 @@ const Email = () => {
               Send
             </Button>
           </FormWrap>
-        </from>
+        </form>
       </EmailContent>
     </EmailContainer>
   );
@@ -90,8 +101,11 @@ const EmailContent = styled.div`
   }
 `;
 const FormWrap = styled.div`
-input {
+input, select {
     padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     outline: none;
     width: 350px;
     height: 48px;

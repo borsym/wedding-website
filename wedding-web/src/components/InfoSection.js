@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "./Button";
 const Section = styled.section`
   width: 100%;
   height: 100%;
   padding: 4rem 0rem;
+  background-color: #ff8c00;
 `;
 const Container = styled.div`
   padding: 3rem calc((100vw - 1300px) / 2);
@@ -55,7 +55,28 @@ const ColumnRight = styled.div`
       }
   }
 `;
+const SocialIconLink = styled.a`
+  background: ${({ primary }) => (primary ? "#000d1a" : "CD853F")};
+  white-space: nowrap;
+  outline: none;
+  border: none;
+  min-width: 100px;
+  max-width: 200px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: ${({ big }) => (big ? "16px 40px" : "14px 24px")};
+  color: ${({ primary }) => (primary ? "#fff" : "#000d1a")};
+  font-size: ${({ big }) => (big ? "20px" : "14px")};
+  border-radius: ${({ round }) => (round ? "50px" : "0px")};
 
+  &:hover {
+    transform: translateY(-3px);
+  }
+`;
 const InfoSection = ({
   heading,
   paragraphOne,
@@ -71,9 +92,14 @@ const InfoSection = ({
           <h1>{heading}</h1>
           <p>{paragraphOne}</p>
           <p>{paragraphTwo}</p>
-          <Button to="/home" primary="true">
+          <SocialIconLink
+            href="https://www.youtube.com/"
+            target="_blank"
+            aria-label="Youtube"
+            primary="true"
+          >
             {buttonLabel}
-          </Button>
+          </SocialIconLink>
         </ColumnLeft>
         <ColumnRight reverse={reverse}>
           <img src={image} alt="home" />

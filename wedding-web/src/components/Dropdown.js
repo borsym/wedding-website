@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { menuData } from "../data/MenuData";
 import { Button } from "./Button";
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import { FaTimes } from "react-icons/fa";
 const DropDownContainer = styled.div`
   position: fixed;
@@ -79,11 +79,11 @@ const Dropdown = ({ isOpen, toggle }) => {
         </DropdownMenu>
         <BtnWrap>
           <Button
+            to="#contact"
             primary="true"
             round="true"
             big="true"
-            to="/contact"
-            smooth={true}
+            smooth="true"
             duration={500}
             /* spy={true} */
             exact="true"
