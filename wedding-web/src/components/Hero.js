@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled, { css } from "styled-components/macro";
 import { IoMdArrowRoundForward } from "react-icons/io";
-import { IoArrowForward, IoArrowBack } from "react-icons/io5";
+//import { IoArrowForward, IoArrowBack } from "react-icons/io5";
+import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
 
 const HeroSection = styled.section`
   height: 100vh;
@@ -47,7 +48,7 @@ const HeroSlider = styled.div`
     opacity: 0.4;
     background: linear-gradient(
       0deg,
-      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0) 0%,
       rgba(0, 0, 0, 0.2) 50%,
       rgba(0, 0, 0, 0.6) 100%
     );
@@ -136,11 +137,11 @@ const SocialIconLink = styled.a`
   }
 `;
 
-const PrevArrow = styled(IoArrowBack)`
+const PrevArrow = styled(RiArrowLeftSLine)`
   ${arrowButtons}
 `;
 
-const NextArrow = styled(IoArrowForward)`
+const NextArrow = styled(RiArrowRightSLine)`
   ${arrowButtons}
 `;
 

@@ -6,14 +6,22 @@ import { GiCutDiamond } from "react-icons/gi";
 import { GiBigDiamondRing } from "react-icons/gi";
 import { IconContext } from "react-icons/lib";
 import styled from "styled-components";
+import PricingBg from "../images/pricing4.jpg";
 import "./Pricing.css";
-
+// background: linear-gradient(45deg, #ffa07a 40%, #dc143c 100%);
 const PricingSection = styled.div`
   padding: 100px 0 160px;
   display: flex;
   flex-directino: column;
   justify-content: center;
-  background: linear-gradient(45deg, #ffa07a 40%, #dc143c 100%);
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.5) 35%,
+      rgba(0, 0, 0, 0.1) 100%
+    ),
+    url(${PricingBg}) no-repeat center;
+  object-fit: cover;
 `;
 const PricingWrapper = styled.div`
   display: flex;
@@ -101,7 +109,7 @@ const Pricing = () => {
                   <li>Gift Box</li>
                   <li>Full HD</li>
                 </PricingContainerFeatures>
-                <Button big="true" primary="true">
+                <Button medium="true" primary="true">
                   Choose Package
                 </Button>
               </PricingContainerCardInfo>
@@ -142,7 +150,9 @@ const Pricing = () => {
                   <li>Pre-photography</li>
                   <li>Pre-photography</li>
                 </PricingContainerFeatures>
-                <Button /* big="false" */ primary="true">Choose Package</Button>
+                <Button medium="true" primary="true">
+                  Choose Package
+                </Button>
               </PricingContainerCardInfo>
             </Link>
           </PricingContainer>

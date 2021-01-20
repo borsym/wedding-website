@@ -7,6 +7,8 @@ import { Button } from "./Button";
 import { FaBars } from "react-icons/fa";
 import { animateScroll as scroll } from "react-scroll";
 import { IconContext } from "react-icons/lib";
+import "./NavBar.css";
+/* import { Trans } from "react-i18next"; */
 // position-sticky
 const Nav = styled.nav`
   background: ${({ scrollNav }) => (scrollNav ? "red" : "transparent")}
@@ -29,6 +31,10 @@ const NavLink = css`
     text-decoration: none;
     &.active {
       border-bottom: 3px solid #01bf71;
+    }
+    &:hover {
+      transition: 0.3s;
+      color: #e3c28d;
     }
 `;
 
@@ -91,12 +97,14 @@ const Navbar = ({ toggle }) => {
     <IconContext.Provider value={{ color: "#fff", size: 32 }}>
       <Nav scrollNav={scrollNav}>
         <Logo to="/" onClick={toggleHome}>
-          BorsyVideo
+          {/*  <Trans i18nKey="Thanks"> {t("Thanks")} */} BorsyVideo
+          {/* </Trans> */}
         </Logo>
         <MenuBars onClick={toggle} />
         <NavMenu>
           {menuData.map((item, index) => (
             <NavMenuLinks
+              className="cool-link"
               to={item.link}
               key={index}
               smooth="true"

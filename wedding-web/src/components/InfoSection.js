@@ -4,7 +4,7 @@ const Section = styled.section`
   width: 100%;
   height: 100%;
   padding: 4rem 0rem;
-  background-color: #ff8c00;
+  background: linear-gradient(45deg, #ecd7d0 0%, #d79c80 100%);
 `;
 const Container = styled.div`
   padding: 3rem calc((100vw - 1300px) / 2);
@@ -48,6 +48,7 @@ const ColumnRight = styled.div`
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 8px;
 
       @media screen and (max-width: 768px) {
           width: 90%
@@ -102,7 +103,7 @@ const InfoSection = ({
           </SocialIconLink>
         </ColumnLeft>
         <ColumnRight reverse={reverse}>
-          <img src={image} alt="home" />
+          <img src={image} alt="borsy bela" />
         </ColumnRight>
       </Container>
     </Section>
