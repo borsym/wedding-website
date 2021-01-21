@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 const Section = styled.section`
   width: 100%;
   height: 100%;
@@ -78,28 +79,22 @@ const SocialIconLink = styled.a`
     transform: translateY(-3px);
   }
 `;
-const InfoSection = ({
-  heading,
-  paragraphOne,
-  paragraphTwo,
-  buttonLabel,
-  reverse,
-  image,
-}) => {
+const InfoSection = ({ buttonLabel, reverse, image }) => {
+  const { t, i18n } = useTranslation();
   return (
     <Section id="about">
       <Container>
         <ColumnLeft>
-          <h1>{heading}</h1>
-          <p>{paragraphOne}</p>
-          <p>{paragraphTwo}</p>
+          <h1>{t("heading")}</h1>
+          <p>{t("paragraphOne")}</p>
+          <p>{t("paragraphTwo")}</p>
           <SocialIconLink
             href="https://www.youtube.com/"
             target="_blank"
             aria-label="Youtube"
             primary="true"
           >
-            {buttonLabel}
+            {t(buttonLabel)}
           </SocialIconLink>
         </ColumnLeft>
         <ColumnRight reverse={reverse}>

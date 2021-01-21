@@ -10,8 +10,8 @@ const Footer = () => {
           <FooterLinksWrapper>
             <FooterLinkItems>
               <FooterLinkTitle> About Us</FooterLinkTitle>
-              <FooterLink to="/home">How it works</FooterLink>
-              <FooterLink to="/home">How it works</FooterLink>
+              <FooterLink to="/home">teL:</FooterLink>
+              <FooterLink to="/home">06915595602</FooterLink>
               <FooterLink to="/home">How it works</FooterLink>
               <FooterLink to="/home">How it works</FooterLink>
               <FooterLink to="/home">How it works</FooterLink>

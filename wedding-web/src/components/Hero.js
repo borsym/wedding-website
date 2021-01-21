@@ -3,7 +3,7 @@ import styled, { css } from "styled-components/macro";
 import { IoMdArrowRoundForward } from "react-icons/io";
 //import { IoArrowForward, IoArrowBack } from "react-icons/io5";
 import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
-
+import { useTranslation } from "react-i18next";
 const HeroSection = styled.section`
   height: 100vh;
   max-height: 1100px;
@@ -81,10 +81,10 @@ const HeroContent = styled.div`
     margin-bottom: 0.8rem;
   }
   p {
-      margin-bottom 1.2rem;
-      text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    margin-bottom 1.2rem;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
   }
-`;
+  `;
 
 const Arrow = styled(IoMdArrowRoundForward)`
   margin-left: 0.5rem;
@@ -120,7 +120,7 @@ const SocialIconLink = styled.a`
   outline: none;
   border: none;
   min-width: 100px;
-  max-width: 200px;
+  max-width: 230px;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.3s ease-out;
@@ -145,22 +145,31 @@ const NextArrow = styled(RiArrowRightSLine)`
   ${arrowButtons}
 `;
 
+function ChooseBorder(props) {
+  const lang = props.lang;
+  if (lang === "View Wedding") {
+    return <Arrow />;
+  } else {
+    return <Arrow />;
+  }
+}
 const Hero = ({ slides }) => {
+  const { t, i18n } = useTranslation();
   const [current, setCurrent] = useState(0);
   const length = slides.length;
   const timeout = useRef(null);
 
-  useEffect(() => {
-    const nextSlide = () => {
-      setCurrent((current) => (current === length - 1 ? 0 : current + 1));
-    };
-    timeout.current = setTimeout(nextSlide, 35000); // ezt ird at a gyorsitashoz
-    return function () {
-      if (timeout.current) {
-        clearTimeout(timeout.current);
-      }
-    };
-  }, [current, length]);
+  /* useEffect(() => {
+      const nextSlide = () => {
+        setCurrent((current) => (current === length - 1 ? 0 : current + 1));
+      };
+      timeout.current = setTimeout(nextSlide, 35000); // ezt ird at a gyorsitashoz
+      return function () {
+        if (timeout.current) {
+          clearTimeout(timeout.current);
+        }
+      };
+    }, [current, length]); */
   const nextSlide = () => {
     if (timeout.current) {
       clearTimeout(timeout.current);
@@ -194,9 +203,10 @@ const Hero = ({ slides }) => {
                       target="_blank"
                       aria-label="Youtube"
                       primary="true"
+                      lang={slide.label}
                     >
-                      {slide.label}
-                      <Arrow />
+                      {t(slide.label)}
+                      <ChooseBorder lang={slide.label} />
                     </SocialIconLink>
                   </HeroContent>
                 </HeroSlider>

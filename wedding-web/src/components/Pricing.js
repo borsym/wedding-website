@@ -7,6 +7,7 @@ import { GiBigDiamondRing } from "react-icons/gi";
 import { IconContext } from "react-icons/lib";
 import styled from "styled-components";
 import PricingBg from "../images/pricing4.jpg";
+import { useTranslation } from "react-i18next";
 import "./Pricing.css";
 // background: linear-gradient(45deg, #ffa07a 40%, #dc143c 100%);
 const PricingSection = styled.div`
@@ -87,6 +88,7 @@ const Icon = styled.div`
 //Icon
 
 const Pricing = () => {
+  const { t, i18n } = useTranslation();
   return (
     <IconContext.Provider value={{ color: "#fff", size: 64 }}>
       <PricingSection id="offers">
@@ -99,18 +101,18 @@ const Pricing = () => {
                 <Icon>
                   <FaFire />
                 </Icon>
-                <h3>Standard</h3>
-                <h4>something</h4>
-                <p>One camerman</p>
+                <h3>{t("Standard")}</h3>
+                <h4>{t("something")}</h4>
+                <p>{t("One camerman")}</p>
                 <PricingContainerFeatures>
-                  <li>Two camera</li>
-                  <li>Wedding highlights</li>
-                  <li>64GB pendrive</li>
-                  <li>Gift Box</li>
-                  <li>Full HD</li>
+                  <li>{t("Two camera")}</li>
+                  <li>{t("Wedding highlights")}</li>
+                  <li>{t("64GB pendrive")}</li>
+                  <li>{t("Gift Box")}</li>
+                  <li>{t("Full HD")}</li>
                 </PricingContainerFeatures>
                 <Button medium="true" primary="true">
-                  Choose Package
+                  {t("Choose Package")}
                 </Button>
               </PricingContainerCardInfo>
             </Link>
@@ -120,17 +122,17 @@ const Pricing = () => {
                 <Icon>
                   <GiCutDiamond />
                 </Icon>
-                <h3>Diamond</h3>
-                <h4>$29.00</h4>
-                <p>Two camerman</p>
+                <h3>{t("Diamond")}</h3>
+                <h4>{t("something")}</h4>
+                <p>{t("Two camerman")}</p>
                 <PricingContainerFeatures>
-                  <li>Includes standard</li>
-                  <li>Aerial shots</li>
-                  <li>Fast delivery</li>
-                  <li>Pre-photography</li>
+                  <li>{t("Includes standard")}</li>
+                  <li>{t("Aerial shots")}</li>
+                  <li>{t("Fast delivery")}</li>
+                  <li>{t("Pre-photography")}</li>
                 </PricingContainerFeatures>
                 <Button big="true" primary="true">
-                  Choose Package
+                  {t("Choose Package")}
                 </Button>
               </PricingContainerCardInfo>
             </Link>
@@ -140,18 +142,17 @@ const Pricing = () => {
                 <Icon>
                   <GiBigDiamondRing />
                 </Icon>
-                <h3>Gold</h3>
-                <h4>$900.00</h4>
-                <p>One camerman</p>
+                <h3>{t("Gold")}</h3>
+                <h4>{t("something")}</h4>
+                <p>{t("One camerman")}</p>
                 <PricingContainerFeatures>
-                  <li>Includes standard</li>
-                  <li>Aerial shots</li>
-                  <li>Fast delivery</li>
-                  <li>Pre-photography</li>
-                  <li>Pre-photography</li>
+                  <li>{t("Includes standard")}</li>
+                  <li>{t("Aerial shots")}</li>
+                  <li>{t("Fast delivery")}</li>
+                  <li>{t("Pre-photography")}</li>
                 </PricingContainerFeatures>
                 <Button medium="true" primary="true">
-                  Choose Package
+                  {t("Choose Package")}
                 </Button>
               </PricingContainerCardInfo>
             </Link>

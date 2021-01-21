@@ -4,6 +4,7 @@ import { menuData } from "../data/MenuData";
 import { Button } from "./Button";
 import { HashLink as Link } from "react-router-hash-link";
 import { FaTimes } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 const DropDownContainer = styled.div`
   position: fixed;
   z-index: 999;
@@ -31,7 +32,18 @@ const Icon = styled.div`
 const CloseIcon = styled(FaTimes)`
   color: #000d1a;
 `;
-const DropdownWrapper = styled.div``;
+const DropdownWrapper = styled.div`
+  img {
+    z-index: 1000;
+    width: 35px;
+    height: 20px;
+    margin-right: 0;
+    margin-left: auto;
+    display: block;
+    outline: none;
+    cursor: pointer;
+  }
+`;
 const DropdownMenu = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -60,20 +72,36 @@ const DropdownLink = styled(Link)`
   }
 `;
 const BtnWrap = styled.div`
-  display: felx;
+  display: flex;
   justify-content: center;
 `;
+
 const Dropdown = ({ isOpen, toggle }) => {
+  const { t, i18n } = useTranslation();
+  function handleClick(lang) {
+    i18n.changeLanguage(lang);
+  }
   return (
     <DropDownContainer isOpen={isOpen} onClick={toggle}>
       <Icon onClick={toggle}>
         <CloseIcon />
       </Icon>
       <DropdownWrapper>
+        <img
+          onClick={() => handleClick("en")}
+          alt="United States"
+          src="http://purecatamphetamine.github.io/country-flag-icons/3x2/GB.svg"
+        />
+
+        <img
+          onClick={() => handleClick("hu")}
+          alt="Hungary"
+          src="http://purecatamphetamine.github.io/country-flag-icons/3x2/HU.svg"
+        />
         <DropdownMenu>
           {menuData.map((item, index) => (
             <DropdownLink to={item.link} key={index}>
-              {item.title}
+              {t(item.title)}
             </DropdownLink>
           ))}
         </DropdownMenu>
@@ -89,7 +117,7 @@ const Dropdown = ({ isOpen, toggle }) => {
             exact="true"
             offset={-80}
           >
-            Contact Us
+            {t("Contact Us")}
           </Button>
         </BtnWrap>
       </DropdownWrapper>

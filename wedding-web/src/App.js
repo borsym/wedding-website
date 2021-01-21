@@ -10,7 +10,7 @@ import Email from "./components/Email";
 import Footer from "./components/Footer";
 import Pricing from "./components/Pricing";
 import { BrowserRouter as Router } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+
 function App() {
   const [isOpen, setisOpen] = useState(false);
 
@@ -18,20 +18,8 @@ function App() {
     setisOpen(!isOpen);
   };
 
-  /* const { t, i18n } = useTranslation();
-  function handleClick(lang) {
-    i18n. changeLanguage(lang);
-  }*/
   return (
     <Router>
-      {/*  <p>{t("Thanks.1")}</p>
-      <p>{t("Why.1")}</p>
-      <nav
-        style={{ width: "100%", padding: "2rem 0", backgroundColor: "gray" }}
-      >
-        <button onClick={() => handleClick("en")}>English</button>
-        <button onClick={() => handleClick("hu")}>Hungary</button>
-      </nav> */}
       <GlobalStyle />
       <Navbar toggle={toggle} />
       <Dropdown isOpen={isOpen} toggle={toggle} />
