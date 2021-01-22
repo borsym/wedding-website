@@ -29,7 +29,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "./wedding-web/npm build",
+    "predeploy": "npm run-script build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
