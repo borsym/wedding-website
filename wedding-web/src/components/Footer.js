@@ -198,4 +198,7 @@ const SocialIcons = styled.div`
 const SocialIconLink = styled.a`
   color: #fff;
   font-size: 24px;
+  &:hover {
+    color: #ffb299;
+  }
 `;

@@ -3,22 +3,74 @@ import styled from "styled-components";
 import EmailBg from "../images/email.jpg";
 import { Button } from "./Button";
 import { useTranslation } from "react-i18next";
+import emailjs from "emailjs-com";
+
+//https://www.emailjs.com/
+
 const Email = () => {
   const { t, i18n } = useTranslation();
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_pmnubvw",
+        "template_lwddz5a",
+        e.target,
+        "user_E0zNH1tcydKbNosG13iSE"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  }
+
   return (
     <EmailContainer id="contact">
       <EmailContent>
         <h1>{t("Contact Us")}</h1>
         <p>{t("Write an email for us")}</p>
-        <form action="#">
+        <form onSubmit={sendEmail}>
           <FormWrap>
-            <input type="text" placeholder={t("Enter your name")} id="name" />
+            <input
+              type="text"
+              placeholder={t("Enter your name")}
+              id="name"
+              name="name"
+              required
+              maxlength="100"
+            />
             {/*    <input type="date" id="date" value="2017-06-01" /> */}
-            <input type="text" placeholder={t("Date like: 2020.01.01")} id="date" />
+            <input
+              type="text"
+              placeholder={t("Date like: 2020.01.01")}
+              id="date"
+              name="date"
+              required
+              maxlength="30"
+            />
             <label htmlFor="email">
-              <input type="eamil" placeholder={t("Enter your email")} id="email" />
+              <input
+                type="email"
+                placeholder={t("Enter your email")}
+                id="email"
+                name="email"
+                required
+                maxlength="100"
+              />
             </label>
-            <select id="package">
+            <textarea
+              placeholder={t("Your message")}
+              name="message"
+              maxlength="1000"
+            ></textarea>
+            <select id="package" name="package">
               <option defaultValue="" disabled selected>
                 {t("Choose your package")}
               </option>
@@ -26,6 +78,7 @@ const Email = () => {
               <option defaultValue="react">{t("Gold")}</option>
               <option defaultValue="react">{t("Standard")}</option>
             </select>
+
             <Button
               as="button"
               type="submit"
@@ -103,7 +156,7 @@ const EmailContent = styled.div`
   }
 `;
 const FormWrap = styled.div`
-input, select {
+input, select, textarea {
     padding: 1rem 1.5rem;
     display: flex;
     flex-direction: column;

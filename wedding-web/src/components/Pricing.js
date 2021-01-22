@@ -96,7 +96,7 @@ const Pricing = () => {
           <PricingHeading>Packages</PricingHeading>
 
           <PricingContainer>
-            <Link to="/sing-up" className="pricing_container-card">
+            <Link to="/contact" className="pricing_container-card">
               <PricingContainerCardInfo>
                 <Icon>
                   <FaFire />
@@ -117,7 +117,7 @@ const Pricing = () => {
               </PricingContainerCardInfo>
             </Link>
 
-            <Link to="/sing-up" className="pricing_container-card">
+            <Link to="/contact" className="pricing_container-card">
               <PricingContainerCardInfo>
                 <Icon>
                   <GiCutDiamond />
@@ -131,13 +131,13 @@ const Pricing = () => {
                   <li>{t("Fast delivery")}</li>
                   <li>{t("Pre-photography")}</li>
                 </PricingContainerFeatures>
-                <Button big="true" primary="true">
+                <Button medium="true" primary="true">
                   {t("Choose Package")}
                 </Button>
               </PricingContainerCardInfo>
             </Link>
 
-            <Link to="/sing-up" className="pricing_container-card">
+            <Link to="/contact" className="pricing_container-card">
               <PricingContainerCardInfo>
                 <Icon>
                   <GiBigDiamondRing />
